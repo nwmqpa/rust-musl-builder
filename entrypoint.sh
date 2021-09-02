@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -n "$2" ] && [ -n "$3" ]; then
-	echo -e '[url \"https://$GH_USER:$GH_PAT@github.com/\"]\n\tinsteadOf = https://github.com/' >> ~/.gitconfig
+	git config --global url."https://$GH_USER:$GH_PATH@github.com".insteadOf "https://github.com"
 fi
 
 bash -c $1
