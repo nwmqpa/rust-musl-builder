@@ -1,0 +1,20 @@
+# action.yml
+name: 'Rust Musl Builder'
+description: 'Build a rust binary using musl and cargo'
+inputs:
+  gh_user:
+    description: 'The github user used for private repos'
+    required: false
+  gh_pat:
+    description: 'The github private access token used for private repos'
+    required: false
+  command:
+    description: 'The command to use inside the container'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.gh_user }}
+    - ${{ inputs.gh_pat }}
