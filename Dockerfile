@@ -6,4 +6,6 @@ RUN sudo apt-get install -y clang
 
 COPY entrypoint.sh /entrypoint.sh
 
+USER root
+
 ENTRYPOINT ["/entrypoint.sh"]
