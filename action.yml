@@ -1,5 +1,5 @@
 # action.yml
-name: 'Rust Musl Builder'
+name: 'nwmqpa/rust-musl-builder'
 description: 'Build a rust binary using musl and cargo'
 inputs:
   gh_user:
