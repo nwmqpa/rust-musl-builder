@@ -11,6 +11,15 @@ inputs:
   command:
     description: 'The command to use inside the container'
     required: true
+  sccache_bucket:
+    description: 'The bucket used to store compilation artifacts'
+    required: false
+  aws_access_key_id:
+    description: 'AWS Access key ID'
+    required: false
+  aws_secret_access_key:
+    description: 'AWS Secret access key'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -18,3 +27,6 @@ runs:
     - ${{ inputs.command }}
     - ${{ inputs.gh_user }}
     - ${{ inputs.gh_pat }}
+    - ${{ inputs.sccache_bucket }}
+    - ${{ inputs.aws_access_key_id }}
+    - ${{ inputs.aws_secret_access_key }}
